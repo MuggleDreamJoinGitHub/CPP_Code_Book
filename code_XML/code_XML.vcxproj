@@ -140,16 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Ctrl_CRUD.cpp" />
-    <ClCompile Include="data.cpp" />
     <ClCompile Include="File_Stream.cpp" />
-    <ClCompile Include="Show.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ctrl_CRUD.h" />
-    <ClInclude Include="data.h" />
     <ClInclude Include="File_Stream.h" />
-    <ClInclude Include="Show.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
