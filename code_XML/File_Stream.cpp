@@ -21,7 +21,6 @@ void ReadMimaInfo(char WebSite[300][20], char User[300][20],char Mima[300][20], 
 	int nNum = 0;
 	fread(&nNum, 4, 1, pFile);
 	*pCount = nNum;
-
 	// 读取站点信息
 	fread(WebSite, 300 * 20, 1, pFile);
 	// 读取账户信息
