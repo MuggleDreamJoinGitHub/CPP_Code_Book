@@ -47,7 +47,7 @@ void addInfo(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arr
 	scanf_s("%s", g_arrPassWord[*nCount], 20);
 	(*nCount)++;
 	printf("添加成功!,当前共有: %d 条数据\n", *nCount);
-	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount,g_size);
+	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount, g_size);
 }
 
 /*

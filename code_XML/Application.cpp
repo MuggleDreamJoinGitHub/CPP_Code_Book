@@ -17,7 +17,7 @@
 */
 int main()
 {
-	ReadMimaInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount,&g_size);
+	ReadMimaInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount, &g_size);
 	int flag = true;
 	while (flag)
 	{
@@ -33,13 +33,13 @@ int main()
 			findInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount);
 			break;
 		case 添加站点:
-			addInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount,&g_size);
+			addInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount, &g_size);
 			break;
 		case 修改信息:
-			upDateInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount,&g_size);
+			upDateInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount, &g_size);
 			break;
 		case 删除站点:
-			deleteInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount,&g_size);
+			deleteInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount, &g_size);
 			break;
 		case 退出程序:
 			flag = false;
