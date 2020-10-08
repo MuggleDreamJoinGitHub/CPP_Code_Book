@@ -6,11 +6,3 @@
 #define 删除站点 5
 #define 输出所有信息到文件 6
 #define 退出程序 7
-
-// 存储
-char g_arrWebSite[300][20];
-char g_arrUserName[300][20];
-char g_arrPassWord[300][20];
-
-// 存储计数
-int nCount = 0;

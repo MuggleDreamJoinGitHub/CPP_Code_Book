@@ -19,8 +19,8 @@ void ReadMimaInfo(char WebSite[300][20], char User[300][20],char Mima[300][20], 
 
 	// 读取密码数量
 	int nNum = 0;
-	fread(&nNum, 4, 1, pFile);
-	*pCount = nNum;
+	int readRestle = fread(&nNum, 4, 1, pFile);
+	*pCount = 100; // 暂时100 防止读错
 
 	// 读取站点信息
 	fread(WebSite, 300 * 20, 1, pFile);

@@ -12,8 +12,15 @@
 // CRUD
 #include "ctrl.h"
 
+// 存储
+char g_arrWebSite[300][20];
+char g_arrUserName[300][20];
+char g_arrPassWord[300][20];
+
+// 存储计数
+int nCount = 0;
 /*
-	密码本项目-二维数组存储
+	密码本项目
 */
 int main()
 {

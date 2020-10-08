@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string.h>
 #include "File_Stream.h"
-
 /*
 	查询所有
 */
@@ -12,10 +11,6 @@ void findAll(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arr
 	for (int i = 0; i < *nCount; i++)
 	{
 		printf("%d: 站点:%s\t\t用户名:%s\t\t密码:%s\n", (i + 1), g_arrWebSite[i], g_arrUserName[i], g_arrPassWord[i]);
-	}
-	if (nCount == 0)
-	{
-		printf("当前存储状态为0!\n");
 	}
 	system("pause");
 }
@@ -50,7 +45,7 @@ void addInfo(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arr
 	scanf_s("%s", g_arrUserName[*nCount], 20);
 	printf("%s", "请输入密码:");
 	scanf_s("%s", g_arrPassWord[*nCount], 20);
-	*nCount++;
+	(*nCount)++;
 	printf("添加成功!,当前共有: %d 条数据\n", *nCount);
 	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount);
 }
@@ -82,6 +77,7 @@ void upDateInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], c
 			printf("站点:%s\t\t用户名:%s\t\t密码:%s\n", g_arrWebSite[i], g_arrUserName[i], g_arrPassWord[i]);
 		}
 	}
+	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount);
 	system("pause");
 }
 
@@ -105,9 +101,10 @@ void deleteInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], c
 				strcpy_s(g_arrUserName[x], 20, g_arrUserName[x + 1]);
 				strcpy_s(g_arrPassWord[x], 20, g_arrPassWord[x + 1]);
 			}
-			nCount--;
+			(*nCount)--;
 			break;
 		}
 	}
+	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount);
 	system("pause");
 }
