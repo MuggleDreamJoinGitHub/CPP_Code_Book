@@ -13,8 +13,7 @@ void show()
 	printf("%s", "添加站点 3\n");
 	printf("%s", "修改信息 4\n");
 	printf("%s", "删除站点 5\n");
-	printf("%s", "输出所有信息到文件 6\n");
-	printf("%s", "退出程序 7\n");
+	printf("%s", "退出程序 6\n");
 	printf("%s", "----------------\n");
 	printf("%s", "请输入编号:");
 }
