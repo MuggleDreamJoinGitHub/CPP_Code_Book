@@ -145,6 +145,7 @@
     <ClCompile Include="Show.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ctrl.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="File_Stream.h" />
     <ClInclude Include="Show.h" />

@@ -36,7 +36,7 @@ void findInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], cha
 /*
 	添加一条信息
 */
-void addInfo(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arrPassWord[300][20], int* nCount)
+void addInfo(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arrPassWord[300][20], int* nCount,int * g_size)
 {
 	system("cls");
 	printf("%s", "请输入站点名称:");
@@ -47,13 +47,13 @@ void addInfo(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arr
 	scanf_s("%s", g_arrPassWord[*nCount], 20);
 	(*nCount)++;
 	printf("添加成功!,当前共有: %d 条数据\n", *nCount);
-	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount);
+	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount,g_size);
 }
 
 /*
 	根据站点修改一条信息
 */
-void upDateInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arrPassWord[300][20], int* nCount)
+void upDateInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arrPassWord[300][20], int* nCount, int* g_size)
 {
 	system("cls");
 	char webSite[20] = {};
@@ -77,14 +77,14 @@ void upDateInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], c
 			printf("站点:%s\t\t用户名:%s\t\t密码:%s\n", g_arrWebSite[i], g_arrUserName[i], g_arrPassWord[i]);
 		}
 	}
-	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount);
+	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount, g_size);
 	system("pause");
 }
 
 /*
 	根据站点删除一条信息
 */
-void deleteInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arrPassWord[300][20], int* nCount)
+void deleteInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], char g_arrPassWord[300][20], int* nCount, int* g_size)
 {
 	system("cls");
 	char webSite[20] = {};
@@ -105,6 +105,6 @@ void deleteInfoBySite(char g_arrWebSite[300][20], char g_arrUserName[300][20], c
 			break;
 		}
 	}
-	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount);
+	SaveFile(g_arrWebSite, g_arrUserName, g_arrPassWord, nCount, g_size);
 	system("pause");
 }

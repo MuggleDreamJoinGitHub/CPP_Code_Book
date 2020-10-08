@@ -6,41 +6,42 @@
 /*
 	读取信息
 */
-void ReadMimaInfo(char WebSite[300][20], char User[300][20],char Mima[300][20], int* pCount) {
+void ReadMimaInfo(char WebSite[300][20], char User[300][20],char Mima[300][20], int* pCount, int* g_size) {
 
 	FILE* pFile = NULL;
-	int nError = fopen_s(&pFile, "mima_file.b", "rb+");
-	if (nError != 0)
+	int nError = fopen_s(&pFile, "mima_file.a", "rb+");
+	if (nError != NULL)
 	{
 		return;
 	}
 
 	// 每当我们读取一次文件, 文件当前的读写位置, 就会后移读取的字节数
 
+	// 读取上一次保存的最大值
+	//fread(&g_size, sizeof(int), 1, pFile);
+
 	// 读取密码数量
-	int nNum = 0;
-	int readRestle = fread(&nNum, 4, 1, pFile);
-	*pCount = 100; // 暂时100 防止读错
+	fread(&pCount, sizeof(int), 1, pFile);
+
 
 	// 读取站点信息
-	fread(WebSite, 300 * 20, 1, pFile);
+	fread(WebSite, 300 * 20, 4, pFile);
 	// 读取账户信息
-	fread(User, 300 * 20, 1, pFile);
+	fread(User, 300 * 20, 4, pFile);
 	// 读取密码信息
-	fread(Mima, 300 * 20, 1, pFile);
+	fread(Mima, 300 * 20, 4, pFile);
 	// 关闭流
 	fclose(pFile);
-
 
 }
 
 /*
 	写入信息
 */
-void SaveFile(char WebSite[300][20], char User[300][20],char Mima[300][20], int* pCount) {
+void SaveFile(char WebSite[300][20], char User[300][20],char Mima[300][20], int* pCount, int*g_size) {
 	
 	FILE* pFile = NULL;
-	int nError = fopen_s(&pFile, "mima_file.b", "wb+");
+	int nError = fopen_s(&pFile, "mima_file.a", "wb+");
 
 	if (nError != 0)
 	{
@@ -49,14 +50,16 @@ void SaveFile(char WebSite[300][20], char User[300][20],char Mima[300][20], int*
 
 	// 每当我们读取一次文件, 文件当前的读写位置, 就会后移读取的字节数
 
+	// 写入文件的最大数
+	//fwrite(&g_size, sizeof(int), 1, pFile);
 	// 写入密码数量
-	fwrite(&pCount, 4, 1, pFile);
+	fwrite(&pCount, sizeof(int), 1, pFile);
 	// 写入站点信息
-	fwrite(WebSite, 300 * 20, 1, pFile);
+	fwrite(WebSite, 300 * 20, 4, pFile);
 	// 写入账户信息
-	fwrite(User, 300 * 20, 1, pFile);
+	fwrite(User, 300 * 20, 4, pFile);
 	// 写入密码信息
-	fwrite(Mima, 300 * 20, 1, pFile);
+	fwrite(Mima, 300 * 20, 4, pFile);
 	// 关闭流
 	fclose(pFile);
 }

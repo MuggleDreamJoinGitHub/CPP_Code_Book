@@ -19,12 +19,15 @@ char g_arrPassWord[300][20];
 
 // 存储计数
 int nCount = 0;
+// 最大容量
+int g_size = 0;
+
 /*
 	密码本项目
 */
 int main()
 {
-	ReadMimaInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount);
+	ReadMimaInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount,&g_size);
 	int flag = true;
 	while (flag)
 	{
@@ -41,13 +44,13 @@ int main()
 			findInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount);
 			break;
 		case 添加站点:
-			addInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount);
+			addInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount,&g_size);
 			break;
 		case 修改信息:
-			upDateInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount);
+			upDateInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount,&g_size);
 			break;
 		case 删除站点:
-			deleteInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount);
+			deleteInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount,&g_size);
 			break;
 		case 输出所有信息到文件:
 			// 保存到密码本

@@ -38,5 +38,8 @@
     <ClInclude Include="Data.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ctrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
