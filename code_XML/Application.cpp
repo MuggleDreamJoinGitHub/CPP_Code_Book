@@ -3,43 +3,44 @@
 #include <iostream>
 #include <string.h>
 
-// 提示
-#include "Show.h"
-// 文件流处理
-#include "File_Stream.h" 
+// 结构体
+#include "StructClass.h"
 // 自定义数据
 #include "Data.h"
+// 文件流处理
+#include "File_Stream.h" 
 // CRUD
 #include "ctrl.h"
-
+// 提示
+#include "Show.h"
 /*
 	密码本项目
 */
 int main()
 {
-	ReadMimaInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount, &g_size);
+	ReadMimaInfo(g_info, &g_count, &g_size);
 	int flag = true;
 	while (flag)
 	{
 		int nOpenNum = 0;
-		show();
+		show(g_count);
 		scanf_s("%d", &nOpenNum);
 		switch (nOpenNum)
 		{
 		case 查询所有:
-			findAll(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount);
+			findAll(g_info, g_count, g_size);
 			break;
 		case 查询站点:
-			findInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount);
+			findInfoBySite(g_info, g_count, g_size);
 			break;
 		case 添加站点:
-			addInfo(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount, &g_size);
+			addInfo(g_info, &g_count, &g_size);
 			break;
 		case 修改信息:
-			upDateInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount, &g_size);
+			upDateInfoBySite(g_info, &g_count, &g_size);
 			break;
 		case 删除站点:
-			deleteInfoBySite(g_arrWebSite, g_arrUserName, g_arrPassWord, &nCount, &g_size);
+			deleteInfoBySite(g_info, &g_count, &g_size);
 			break;
 		case 退出程序:
 			flag = false;

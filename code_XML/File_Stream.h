@@ -1,2 +1,2 @@
-void ReadMimaInfo(char WebSite[300][20], char User[300][20], char Mima[300][20], int* pCount, int* g_size);
-void SaveFile(char WebSite[300][20], char User[300][20], char Mima[300][20], int* pCount, int* g_size);
+void ReadMimaInfo(SITEINFO* g_info, int* g_count, int* g_size);
+void SaveFile(SITEINFO* g_info, int* g_count, int* g_size);

@@ -15,33 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="File_Stream.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Ctrl.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Show.cpp">
+    <ClCompile Include="源1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="File_Stream.h">
+    <ClInclude Include="参数.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Show.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Data.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ctrl.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="StructClass.h">
+    <ClInclude Include="参数2.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

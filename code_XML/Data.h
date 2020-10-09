@@ -6,12 +6,12 @@
 #define 删除站点 5
 #define 退出程序 6
 
+// 保存数据全局变量
+SITEINFO g_info[200] = {0};
+
 // 存储计数
-int nCount = 0;
+int g_count = 0;
+
 // 最大容量
 int g_size = 0;
 
-// 存储
-char g_arrWebSite[300][20];
-char g_arrUserName[300][20];
-char g_arrPassWord[300][20];

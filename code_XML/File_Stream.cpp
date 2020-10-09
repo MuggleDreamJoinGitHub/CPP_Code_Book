@@ -2,30 +2,26 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string.h>
+#include "StructClass.h"
 
 /*
 	读取信息
 */
-void ReadMimaInfo(char WebSite[300][20], char User[300][20],char Mima[300][20], int* pCount, int* g_size) {
-
+void ReadMimaInfo(SITEINFO *g_info, int* g_count, int* g_size) {
 	FILE* pFile = NULL;
-	errno_t nError = fopen_s(&pFile, "mima_file.b", "rb+");
+	int nError = fopen_s(&pFile, "mima_file.b", "rb+");
 	if (nError != NULL)
 	{
 		return;
 	}
-
-	// 读取上一次保存的最大值
-	//fread(&g_size, sizeof(int), 1, pFile);
-
-	// 读取密码数量
-	fread(pCount, sizeof(int), 1, pFile);
-	// 读取站点信息
-	fread(WebSite, 300 * 20, 1, pFile);
-	// 读取账户信息
-	fread(User, 300 * 20, 1, pFile);
-	// 读取密码信息
-	fread(Mima, 300 * 20, 1, pFile);
+	else {
+		// 读取最大数
+		//fread(g_size, sizeof(int), 1, pFile);
+		// 读取密码数量
+		fread(g_count, sizeof(int), 1, pFile);
+		// 读取数据
+		fread(g_info, *g_count * 200, 1, pFile);
+	}
 	// 关闭流
 	fclose(pFile);
 
@@ -34,28 +30,21 @@ void ReadMimaInfo(char WebSite[300][20], char User[300][20],char Mima[300][20], 
 /*
 	写入信息
 */
-void SaveFile(char WebSite[300][20], char User[300][20],char Mima[300][20], int* pCount, int* g_size) {
-	
+void SaveFile(SITEINFO* g_info, int* g_count, int* g_size) {
 	FILE* pFile = NULL;
 	int nError = fopen_s(&pFile, "mima_file.b", "wb+");
-
 	if (nError != 0)
 	{
 		return;
 	}
-
-
-	// 写入文件的最大数
-	//fwrite(&g_size, sizeof(int), 1, pFile);
-	
-	// 写入密码数量
-	fwrite(pCount, sizeof(int), 1, pFile);
-	// 写入站点信息
-	fwrite(WebSite, 300 * 20, 1, pFile);
-	// 写入账户信息
-	fwrite(User, 300 * 20, 1, pFile);
-	// 写入密码信息
-	fwrite(Mima, 300 * 20, 1, pFile);
+	else {
+		// 写入信息最大数
+		//fwrite(&g_size, sizeof(int), 1, pFile);
+		// 写入信息数量
+		fwrite(g_count, sizeof(int), 1, pFile);
+		// 写入数据
+		fwrite(g_info, *g_count*200, 1, pFile);
+	}
 	// 关闭流
 	fclose(pFile);
 }

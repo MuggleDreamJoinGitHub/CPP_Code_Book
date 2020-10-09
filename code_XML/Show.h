@@ -1,1 +1,1 @@
-void show();
+void show(int g_count);
