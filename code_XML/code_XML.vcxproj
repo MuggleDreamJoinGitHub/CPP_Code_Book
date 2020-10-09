@@ -143,6 +143,7 @@
     <ClCompile Include="Ctrl.cpp" />
     <ClCompile Include="File_Stream.cpp" />
     <ClCompile Include="Show.cpp" />
+    <ClCompile Include="StructClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ctrl.h" />

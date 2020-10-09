@@ -1,2 +1,3 @@
-void ReadMimaInfo(SITEINFO* g_info, int* g_count, int* g_size);
-void SaveFile(SITEINFO* g_info, int* g_count, int* g_size);
+void ReadMimaInfo(int* pCount);
+void SaveFile(int nCount);
+void codePassWord(int nCount);
